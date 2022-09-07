@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All in dsmeta" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+    <module name="dsmeta" />
+    <option name="PACKAGE_NAME" value="" />
+    <option name="MAIN_CLASS_NAME" value="" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="package" />
+    <envs>
+      <env name="TWILIO_SID" value="AC527eb789b6de3d4f3273ac361072af49" />
+      <env name="TWILIO_KEY" value="09084599fc9c10bbf44fa559e617e962" />
+      <env name="TWILIO_PHONE_FROM" value="+17075498447" />
+      <env name="TWILIO_PHONE_TO" value="+5582982146892" />
+    </envs>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
