@@ -2,7 +2,11 @@ import { Sale } from '../../models/sale'
 import NotificationButton from '../NotificationButton'
 import './styles.css'
 
-function Table({data}) {
+type Props = {
+    data: Sale[];
+}
+
+function Table({data}: Props) {
     return (
         <div>
             <table className="dsmeta-sales-table">
@@ -29,7 +33,9 @@ function Table({data}) {
                                 <td>R$ {sale.amount.toFixed(2)}</td>
                                 <td>
                                     <div className="dsmeta-red-btn-container">
-                                        <NotificationButton />
+                                        <NotificationButton
+                                            saleId={sale.id}
+                                        />
                                     </div>
                                 </td>
                             </tr>
