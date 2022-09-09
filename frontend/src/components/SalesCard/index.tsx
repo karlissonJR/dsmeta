@@ -1,9 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 
 import Table from '../Table'
+
+import axios from 'axios'
+
+import { BASE_URL } from '../../utils/request'
+
+import { Sale } from '../../models/sale'
 
 import './styles.css'
 
@@ -14,6 +20,18 @@ function SalesCard() {
 
     const [minDate, setMinDate] = useState(min)
     const [maxDate, setMaxDate] = useState(max)
+    const [sales, setSales] = useState<Sale[]>([])
+
+    useEffect(() => {
+        axios.get(`${BASE_URL}/sales`)
+            .then(response => {
+                setSales(response.data.content)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+    }, [])
 
     return (
         <div className="dsmeta-card">
@@ -38,7 +56,9 @@ function SalesCard() {
                 </div>
             </div>
 
-            <Table />
+            <Table
+                data={sales}
+            />
 
         </div>
     )
