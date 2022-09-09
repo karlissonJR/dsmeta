@@ -20,7 +20,7 @@ public class SaleService {
 
     public Page<Sale> findSales(String minDate, String maxDate, Pageable pageable) {
 
-        LocalDate today = LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault());
+        LocalDate today = LocalDate.ofInstant(Instant.now(), ZoneId.of("America/Sao_Paulo"));
         LocalDate min = minDate.equals("") ? today.minusYears(1L) : LocalDate.parse(minDate);
         LocalDate max = maxDate.equals("") ? today : LocalDate.parse(maxDate);
 
