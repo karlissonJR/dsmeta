@@ -6,6 +6,14 @@ type Props = {
     data: Sale[];
 }
 
+function formatDate(date: string) {
+    var day: string = date.slice(8, 10)
+    var month: string = date.slice(5, 7)
+    var year: string = date.slice(0, 4)
+
+    return day + "/" + month + "/" + year
+}
+
 function Table({data}: Props) {
     return (
         <div>
@@ -26,7 +34,7 @@ function Table({data}: Props) {
                         return (
                             <tr key={sale.id}>
                                 <td className="show992">#{sale.id}</td>
-                                <td className="show576">{new Date(sale.date).toLocaleDateString()}</td>
+                                <td className="show576">{formatDate(sale.date)}</td>
                                 <td>{sale.sellerName}</td>
                                 <td className="show992">{sale.visited}</td>
                                 <td className="show992">{sale.deals}</td>
